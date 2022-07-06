@@ -11,7 +11,6 @@ WELLKNOWN_MODEL_FILENAMES = ["model.json", "model.dat", "classifier_pipeline.pkl
 class MyCustomModel(MLModel):
 
   async def load(self) -> bool:
-    print(self._settings)
     model_uri = await get_model_uri(self._settings, wellknown_filenames=WELLKNOWN_MODEL_FILENAMES)
     if exists(model_uri):
         print(f"Loading classifier pipeline from {model_uri}")
@@ -28,7 +27,6 @@ class MyCustomModel(MLModel):
     return self.ready
 
   async def predict(self, payload: InferenceRequest) -> InferenceResponse:
-    print(payload)
     input_data = self._extract_inputs(payload)
     predictions = self._model.predict(input_data["text"])
     predicted_labels = [self._classes[prediction].encode("UTF-8") for prediction in predictions]

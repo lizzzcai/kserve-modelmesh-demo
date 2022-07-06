@@ -18,9 +18,9 @@ WORKDIR /opt
 ENV MLSERVER_MODELS_DIR=/models/_mlserver_models \
     MLSERVER_GRPC_PORT=8001 \
     MLSERVER_HTTP_PORT=8002 \
-#    MLSERVER_METRICS_PORT=8082 \
+    MLSERVER_METRICS_PORT=8082 \
     MLSERVER_LOAD_MODELS_AT_STARTUP=false \
-    MLSERVER_DEBUG=true \
+    MLSERVER_DEBUG=false \
     MLSERVER_MODEL_PARALLEL_WORKERS=0 \
     MLSERVER_MODEL_NAME=dummy-model
 
@@ -29,4 +29,4 @@ ENV MLSERVER_MODELS_DIR=/models/_mlserver_models \
 # a basic model settings file
 ENV MLSERVER_MODEL_IMPLEMENTATION=models.MyCustomModel
 
-CMD ["mlserver",  "start", "$MLSERVER_MODELS_DIR"]
+CMD mlserver start $MLSERVER_MODELS_DIR

@@ -1,0 +1,13 @@
+apiVersion: serving.kserve.io/v1alpha1
+kind: Predictor
+metadata:
+  name: custom-predictor
+spec:
+  modelType:
+    name: custom
+    version: "1"
+  path: <path>
+  storage:
+    s3:
+      secretKey: default
+      bucket: <bucket>

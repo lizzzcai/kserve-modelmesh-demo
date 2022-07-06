@@ -1,0 +1,1 @@
+{"inputs": [{"name": "text", "shape": [2], "datatype": "BYTES", "data": ["I loved this food, it was very good", "I don't loved this food, it was not good"]}]}
