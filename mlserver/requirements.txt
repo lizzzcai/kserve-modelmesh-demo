@@ -1,0 +1,5 @@
+protobuf==3.15.8
+#mlserver==0.5.3
+mlserver==1.1.0
+scikit-learn==0.24.2
+joblib==1.0.1

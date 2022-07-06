@@ -1,0 +1,8 @@
+{
+    "name": "text-classifier",
+    "implementation": "models.MyCustomModel",
+    "parameters": {
+        "version": "v0.1.0",
+        "uri": "classifier_pipeline.pkl"
+    }
+}
