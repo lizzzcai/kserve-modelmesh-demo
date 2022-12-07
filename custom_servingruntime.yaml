@@ -22,7 +22,7 @@ spec:
 
   containers:
     - name: mlserver
-      image: lizzzcai/my-custom-mlserver:0.0.5
+      image: lizzzcai/my-custom-mlserver:0.0.6 # set to your custom MLServer image
       env:
         - name: MLSERVER_MODELS_DIR
           value: "/models/"

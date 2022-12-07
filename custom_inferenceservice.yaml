@@ -1,0 +1,38 @@
+# https://github.com/kserve/modelmesh-serving/blob/main/docs/predictors/inferenceservice-cr.md
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: text-classifier
+  annotations:
+    serving.kserve.io/deploymentMode: ModelMesh
+    serving.kserve.io/secretKey: default
+spec:
+  predictor:
+    model:
+      # modelFormat:
+      #   name: custom
+      #   version: "1" # Optional
+      runtime: custom-mlserver-1.x #Optional
+      storageUri: s3://<bucket>/<path>/text-classifier
+      # storage:
+      #   key: default
+      #   path: i543026/mlserver_models/text-classifier
+---
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: text-translator
+  annotations:
+    serving.kserve.io/deploymentMode: ModelMesh
+    serving.kserve.io/secretKey: default
+spec:
+  predictor:
+    model:
+      # modelFormat:
+      #   name: custom
+      #   version: "1" # Optional
+      runtime: custom-mlserver-1.x #Optional
+      storageUri: s3://<bucket>/<path>/text-translator
+      # storage:
+      #   key: default
+      #   path: i543026/mlserver_models/text-translator

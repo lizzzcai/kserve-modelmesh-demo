@@ -1,6 +1,6 @@
 {
     "name": "text-classifier",
-    "implementation": "models.MyCustomModel",
+    "implementation": "models.MyClassifierModel",
     "parameters": {
         "version": "v0.1.0"
     }
