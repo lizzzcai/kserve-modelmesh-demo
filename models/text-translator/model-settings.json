@@ -1,0 +1,7 @@
+{
+    "name": "text-translator",
+    "implementation": "models.MyTranslatorModel",
+    "parameters": {
+        "version": "v0.1.0"
+    }
+}
