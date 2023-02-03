@@ -109,7 +109,7 @@ class MyTranslatorModel(MLModel):
       for request_input in payload.inputs:
           if request_input.name == "text":
             as_dict = request_input.dict(exclude=_to_exclude)  # type: ignore
-            inputs[request_input.name] = [x.decode('UTF-8') for x in as_dict['data']]
+            inputs[request_input.name] = [x for x in as_dict['data']]
             # inputs[request_input.name] = self.decode(request_input)
             break
       return inputs
